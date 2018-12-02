@@ -33,7 +33,7 @@ const plugins = [
         template: './src/index.html',
         favicon: './src/favicon.ico',
         filename: 'index.html',
-        title: '天天上线',
+        title: 'React Scaffold',
         inject: 'body',
         minify: {
             minifyJS: true,
