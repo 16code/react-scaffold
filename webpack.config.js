@@ -119,7 +119,7 @@ module.exports = function config() {
                 '@': path.join(__dirname, 'src'),
                 i18n: path.join(__dirname, 'src/i18n'),
                 components: path.join(__dirname, 'src/components'),
-                containers: path.join(__dirname, 'src/containers'),
+                config: path.join(__dirname, 'src/config'),
                 layouts: path.join(__dirname, 'src/layouts'),
                 reducers: path.join(__dirname, 'src/reducers'),
                 pages: path.join(__dirname, 'src/pages'),
@@ -128,7 +128,6 @@ module.exports = function config() {
                 styles: path.join(__dirname, 'src/styles'),
                 sagas: path.join(__dirname, 'src/sagas'),
                 store: path.join(__dirname, 'src/store'),
-                public: path.join(__dirname, 'public'),
                 AsyncComponent: path.join(__dirname, 'src/components/AsyncComponent.jsx')
             }
         },
