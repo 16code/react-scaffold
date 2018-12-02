@@ -5,9 +5,7 @@ const rootElement = document.getElementById('root');
 const render = Component => {
     ReactDOM.render(
         <RootContainer warnings={false}>
-            <div className="container-wrapper">
-                <Component />
-            </div>
+            <Component />
         </RootContainer>,
         rootElement
     );

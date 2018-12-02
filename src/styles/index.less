@@ -6,8 +6,20 @@
 
 body {
     background: #f8f8f8;
-    color: red;
+}
+.app-root,
+.container-wrapper {
     height: 100%;
-    background-image: url('./add_new.jpg');
-    background-repeat: no-repeat;
+    min-height: 100%;
+}
+
+.layout {
+    &-sider {
+        min-height: 100vh;
+        box-shadow: 2px 0 6px rgba(0, 21, 41, 0.35);
+        z-index: 10;
+    }
+    &-header {
+        background-color: #fff;
+    }
 }

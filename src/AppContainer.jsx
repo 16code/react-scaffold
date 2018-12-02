@@ -1,5 +1,6 @@
-import { LocaleProvider, DatePicker } from 'antd';
-import Test from 'components/Test';
+import { LocaleProvider } from 'antd';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import BasicLayout from 'layouts/BasicLayout';
 import { zhCN } from 'i18n/zh-CN';
 window.onerror = function(errorMessage, scriptURI, lineNo, columnNo, error) {
     const errorObj = {
@@ -11,14 +12,14 @@ window.onerror = function(errorMessage, scriptURI, lineNo, columnNo, error) {
     };
     console.log(errorObj);
 };
-const dateNow = +moment();
 const Container = () => (
     <LocaleProvider locale={zhCN}>
-        <div>
-            <DatePicker />
-            <br />
-            {dateNow}
-            <Test />
+        <div className="container-wrapper">
+            <BrowserRouter>
+                <Switch>
+                    <Route path="/" component={BasicLayout} />
+                </Switch>
+            </BrowserRouter>
         </div>
     </LocaleProvider>
 );
