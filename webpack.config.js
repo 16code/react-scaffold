@@ -124,7 +124,7 @@ module.exports = function config() {
                 reducers: path.join(__dirname, 'src/reducers'),
                 pages: path.join(__dirname, 'src/pages'),
                 services: path.join(__dirname, 'src/services'),
-                utils: path.join(__dirname, 'src/utils'),
+                helper: path.join(__dirname, 'src/helper'),
                 styles: path.join(__dirname, 'src/styles'),
                 sagas: path.join(__dirname, 'src/sagas'),
                 store: path.join(__dirname, 'src/store'),
