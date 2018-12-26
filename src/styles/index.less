@@ -13,9 +13,16 @@ body {
     min-height: 100%;
 }
 
+.ant-layout-content {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 15px;
+}
 .layout {
     &-container {
-        min-height: 100vh;
+        max-height: calc(100vh - 64px);
+        overflow: auto;
+        scroll-behavior: smooth;
     }
     &-sider {
         min-height: 100vh;

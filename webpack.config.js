@@ -13,7 +13,7 @@ const distPath = path.join(__dirname, 'dist');
 const cachePath = path.join(__dirname, '.cache');
 const srcPath = path.join(__dirname, 'src');
 const stylePath = path.join(__dirname, 'src/styles');
-const API_HOST = process.env.API || '//10.10.10.200';
+const API_HOST = process.env.API || '//localhost';
 const isDev = process.env.NODE_ENV === 'development';
 const port = process.env.PORT || 8686;
 
@@ -93,8 +93,7 @@ module.exports = function config() {
         devServer: {
             proxy: {
                 '/api': {
-                    target: `http:${API_HOST}:8490`,
-                    pathRewrite: { '^/api': '' }
+                    target: `http:${API_HOST}:3000`
                 }
             },
             contentBase: distPath,
