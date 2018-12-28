@@ -160,21 +160,13 @@ module.exports = function config() {
                 },
                 {
                     test: /\.(le|c)ss$/,
-                    include: /(node_modules)/,
-                    exclude: srcPath,
-                    use: styleLoaderConfig()
-                },
-                {
-                    test: /\.(le|c)ss$/,
-                    include: stylePath,
-                    use: styleLoaderConfig({ useCssModule: false }),
-                    exclude: /(node_modules)/
+                    include: /(src\/styles|node_modules)/,
+                    use: styleLoaderConfig({ useCssModule: false })
                 },
                 {
                     test: /\.(le|c)ss$/,
                     include: /(src\/pages|src\/components|src\/containers|src\/layouts)/,
-                    use: styleLoaderConfig({ useCssModule: true }),
-                    exclude: /(node_modules)/
+                    use: styleLoaderConfig({ useCssModule: true })
                 },
                 {
                     test: /\.(png|jpg|gif|svg)$/,
@@ -290,7 +282,10 @@ function styleLoaderConfig(options = {}) {
             loader: 'less-loader',
             options: {
                 javascriptEnabled: true,
-                modifyVars: {}
+                modifyVars: {
+                    '@primary-color': 'red',
+                    '@link-color': 'red'
+                }
             }
         }
     ];
