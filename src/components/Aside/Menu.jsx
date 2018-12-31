@@ -5,7 +5,7 @@ const SubMenu = Menu.SubMenu;
 const MenuItem = Menu.Item;
 
 @withRouter
-export default class Aside extends React.PureComponent {
+export default class AsideMenu extends React.PureComponent {
     constructor(props) {
         super(props);
         const opendKeys = this.getDefaultOpenKeys(props);

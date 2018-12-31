@@ -1,7 +1,9 @@
 import { Layout, Row, Col } from 'antd';
 import Pages from 'pages/index';
+import Aside from 'components/Aside';
+import GlobalHeader from 'components/GlobalHeader';
 import AuthContext from 'config/auth.context';
-import ThemeContext from 'config/theme.context';
+import { basedMenu } from 'config/menu.config';
 const { Header, Content } = Layout;
 
 export default class BasicLayout extends React.PureComponent {
@@ -10,34 +12,50 @@ export default class BasicLayout extends React.PureComponent {
             name: 'Jerry',
             role: ['ROLE_DEVELOPER']
         },
-        theme: {
-            siderTheme: 'dark',
-            collapsed: false,
-            width: 240
+        theme: 'dark',
+        siderCollapsed: true
+    };
+    handleToggleAside = () => {
+        this.setState(prevState => ({
+            siderCollapsed: !prevState.siderCollapsed
+        }));
+    };
+    handleMenuClick = key => {
+        switch (key) {
+            case 'changeTheme':
+                this.setState(prevState => ({
+                    theme: prevState.theme === 'dark' ? 'light' : 'dark'
+                }));
+                break;
+
+            default:
+                break;
         }
     };
     render() {
-        const { signedInUser, theme } = this.state;
-
+        const { signedInUser, theme, siderCollapsed } = this.state;
         return (
-            <ThemeContext.Provider value={theme}>
-                <AuthContext.Provider value={signedInUser}>
+            <AuthContext.Provider value={signedInUser}>
+                <Layout className="layout-global">
+                    <Aside collapsed={siderCollapsed} theme={theme} menuData={basedMenu} />
                     <Layout>
                         <Header className="layout-header">
-                            <div className="global-header">Header</div>
+                            <GlobalHeader
+                                collapsed={siderCollapsed}
+                                onToggle={this.handleToggleAside}
+                                onMenuClick={this.handleMenuClick}
+                            />
                         </Header>
-                        <Layout className="layout-container">
-                            <Content>
-                                <Row>
-                                    <Col span={24}>
-                                        <Pages />
-                                    </Col>
-                                </Row>
-                            </Content>
-                        </Layout>
+                        <Content className="layout-container">
+                            <Row>
+                                <Col span={24}>
+                                    <Pages />
+                                </Col>
+                            </Row>
+                        </Content>
                     </Layout>
-                </AuthContext.Provider>
-            </ThemeContext.Provider>
+                </Layout>
+            </AuthContext.Provider>
         );
     }
 }

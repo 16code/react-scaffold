@@ -117,6 +117,7 @@ module.exports = function config() {
                 'react-redux': nodeModulesPath('/react-redux/dist/react-redux.min.js'),
                 '@': path.join(__dirname, 'src'),
                 i18n: path.join(__dirname, 'src/i18n'),
+                assets: path.join(__dirname, 'src/assets'),
                 components: path.join(__dirname, 'src/components'),
                 config: path.join(__dirname, 'src/config'),
                 layouts: path.join(__dirname, 'src/layouts'),
@@ -282,10 +283,7 @@ function styleLoaderConfig(options = {}) {
             loader: 'less-loader',
             options: {
                 javascriptEnabled: true,
-                modifyVars: {
-                    '@primary-color': 'red',
-                    '@link-color': 'red'
-                }
+                modifyVars: {}
             }
         }
     ];
