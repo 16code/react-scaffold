@@ -5,7 +5,7 @@
     padding-left: 24px;
     overflow: hidden;
     user-select: none;
-    border-bottom: 1px solid #ececec;
+    box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
     &.dark {
         background: #002140;
         color: #fff;
@@ -35,11 +35,19 @@
         font-family: Avenir, Helvetica Neue, Arial, Helvetica, sans-serif;
     }
 }
+.layout-container {
+    padding: 16px;
+    height: 100vh;
+    overflow: auto;
+    margin-bottom: 16px;
+}
 .layout-header {
     padding: 0 !important;
 }
 .layout-sider {
     box-shadow: 2px 0 6px rgba(0, 21, 41, 0.1);
+    position: relative;
+    z-index: 10;
     .ant-menu-inline,
     .ant-menu-vertical {
         border-right: 0 !important;
@@ -53,6 +61,9 @@
     height: 64px;
     line-height: 64px;
     user-select: none;
+    box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
+    position: relative;
+    z-index: 9;
     .menu-trigger {
         font-size: 20px;
         height: @header-height;

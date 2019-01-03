@@ -12,25 +12,32 @@ export default class BasicLayout extends React.PureComponent {
             name: 'Jerry',
             role: ['ROLE_DEVELOPER']
         },
-        theme: 'dark',
-        siderCollapsed: true
+        theme: window.localStorage.getItem('USER_THEME') || 'dark',
+        siderCollapsed: window.localStorage.getItem('SIDER_COLLAPSED') === 'true'
     };
     handleToggleAside = () => {
-        this.setState(prevState => ({
-            siderCollapsed: !prevState.siderCollapsed
-        }));
+        const { siderCollapsed } = this.state;
+        const nextState = !siderCollapsed;
+        this.setState({ siderCollapsed: nextState }, () => {
+            window.localStorage.setItem('SIDER_COLLAPSED', nextState);
+        });
     };
     handleMenuClick = key => {
         switch (key) {
             case 'changeTheme':
-                this.setState(prevState => ({
-                    theme: prevState.theme === 'dark' ? 'light' : 'dark'
-                }));
+                this.changeTheme();
                 break;
 
             default:
                 break;
         }
+    };
+    changeTheme = () => {
+        const { theme } = this.state;
+        const nextTheme = theme === 'dark' ? 'light' : 'dark';
+        this.setState({ theme: nextTheme }, () => {
+            window.localStorage.setItem('USER_THEME', nextTheme);
+        });
     };
     render() {
         const { signedInUser, theme, siderCollapsed } = this.state;
