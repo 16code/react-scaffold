@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="75px" height="72px" viewBox="0 0 75 72" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>star08</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="37.1428571 56.7282857 60.0971429 70.5714286 54.0242857 44.4637143 74.2857143 26.9062857 47.5762857 24.6145714 37.1428571 0 26.7094286 24.6145714 0 26.9062857 20.2614286 44.4637143 14.1885714 70.5714286"></polygon>
+    </defs>
+    <g id="SketchAppSources.com" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group" transform="translate(-620.000000, 0.000000)">
+            <g id="star08" transform="translate(620.000000, 0.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <use id="Shape-Copy-5" stroke="#E1E1E1" fill="#E1E1E1" xlink:href="#path-1"></use>
+                <rect id="Rectangle-1" fill="#FF6024" mask="url(#mask-2)" x="-6.42857143" y="-3.71428571" width="70.122449" height="122.714286"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

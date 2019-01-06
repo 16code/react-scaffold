@@ -1,0 +1,37 @@
+.stars {
+    display: inline-block;
+    line-height: 1;
+    font-size: 2em;
+    > span {
+        display: inline-block;
+        width: 1em;
+        height: 1em;
+        background-image: url(~components/Star/stars/star0.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        margin-right: 4px;
+        &.full,
+        &.star-9 {
+            background-image: url(~components/Star/stars/star1.svg);
+        }
+        &.star-3 {
+            background-image: url(~components/Star/stars/star03.svg);
+        }
+        &.star-4 {
+            background-image: url(~components/Star/stars/star04.svg);
+        }
+        &.star-5 {
+            background-image: url(~components/Star/stars/star05.svg);
+        }
+        &.star-6 {
+            background-image: url(~components/Star/stars/star06.svg);
+        }
+        &.star-7 {
+            background-image: url(~components/Star/stars/star07.svg);
+        }
+        &.star-8 {
+            background-image: url(~components/Star/stars/star08.svg);
+        }
+    }
+}
