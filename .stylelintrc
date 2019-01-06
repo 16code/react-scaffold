@@ -9,7 +9,7 @@
         "property-no-unknown": true,
         "block-no-empty": true,
         "no-descending-specificity": null,
-        "unit-whitelist": ["rem", "px", "%", "deg", "s", "ms", "fr", "vh", "vw"],
+        "unit-whitelist": ["rem", "em", "px", "%", "deg", "s", "ms", "fr", "vh", "vw"],
         "selector-pseudo-class-no-unknown": [
             true,
             {

@@ -27,7 +27,7 @@ const filesNameMapper = {
 const plugins = [
     new webpack.DefinePlugin({
         __DEV__: isDev,
-        APP_NAME: '"后台管理系统"'
+        APP_NAME: '"管理后台"'
     }),
     new HtmlWebpackPlugin({
         template: './src/index.html',
